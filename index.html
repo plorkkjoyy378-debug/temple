@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone (Khmer & English)</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-top">
+                <button class="new-chat-btn" onclick="startNewChat()">
+                    <i class="fa-solid fa-plus"></i> សន្ទនាថ្មី (New Chat)
+                </button>
+            </div>
+            <div class="chat-history-list" id="chatHistoryList">
+                <!-- Chat history items injected via JS -->
+            </div>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                    <span>អ្នកប្រើប្រាស់ (User)</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="chat-header">
+                <button class="toggle-sidebar-btn" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="model-selector">
+                    <span>ChatGPT (Gemini AI)</span>
+                </div>
+            </header>
+
+            <!-- Chat Message Window -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome View (Shown when no messages exist) -->
+                <div class="welcome-container" id="welcomeContainer">
+                    <h1>តើខ្ញុំអាចជួយអ្វីអ្នកថ្ងៃនេះ?</h1>
+                    <p class="subtitle">សួរអ្វីក៏បានជាភាសាខ្មែរ ឬអង់គ្លេស...</p>
+                    <div class="suggestion-grid">
+                        <div class="suggestion-card" onclick="sendSuggestion('ពន្យល់ពីរបៀបសរសេរកូដ HTML ឱ្យបានសង្ខេប')">
+                            <i class="fa-solid fa-code"></i>
+                            <span>សរសេរកូដ HTML</span>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('ផ្តល់គំនិតអាជីវកម្មអនឡាញថ្មីៗ')">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span>គំនិតអាជីវកម្ម</span>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('បង្រៀនខ្ញុំពីរឿងសរសេរប្រយោគភាសាអង់គ្លេស')">
+                            <i class="fa-solid fa-book"></i>
+                            <span>រៀនភាសាអង់គ្លេស</span>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('សរសេររឿងនិទានខ្លីមួយជាភាសាខ្មែរ')">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <span>សរសេររឿងនិទាន</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Form Footer -->
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="userInput" placeholder="ផ្ញើសារទៅកាន់ ChatGPT..." rows="1" oninput="autoResize(this)"></textarea>
+                    <button id="sendBtn" onclick="handleSendMessage()">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="disclaimer">
+                    ChatGPT អាចផ្ដល់ចម្លើយខុសខ្លះៗ។ សូមពិនិត្យព័ត៌មានសំខាន់ៗឡើងវិញ។
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
